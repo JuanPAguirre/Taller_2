@@ -1,0 +1,39 @@
+/* ParkingLot.module.css */
+
+.parkingLotContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .cell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    font-size: 14px;
+  }
+  
+  /* Estilos para celdas ocupadas y libres */
+  .cell.empty {
+    background-color: #b2ff59; /* Color para celdas libres */
+  }
+  
+  .cell.occupied {
+    background-color: #ff8a65; /* Color para celdas ocupadas */
+  }
+  
+  /* Estilo activo para el enlace de navegación */
+  .active {
+    color: blue;
+    font-weight: bold;
+  }

@@ -1,41 +1,29 @@
 import React, { useState } from 'react';
+import { useAuth } from '../context/AuthContext';
 
-const Login = ({ onLogin }) => {
+const Login = () => {
+  const { login, error } = useAuth();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
 
   const handleLogin = () => {
-    // Realiza las validaciones aquí
-    if (username.trim() === '' || password.trim() === '') {
-      setError('Por favor ingrese usuario y contraseña.');
-      return;
-    }
-
-    // Lógica de autenticación
-    if (username === 'juan' && password === '1234') {
-        onLogin(username);
-      } else {
-        setError('Usuario o contraseña incorrectos.');
-      }
+    login(username, password);
   };
 
   return (
     <div>
-      <h2>Login</h2>
+      <h1>Inicio de sesión</h1>
       <input
         type="text"
         placeholder="Usuario"
-        value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
       <input
         type="password"
         placeholder="Contraseña"
-        value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleLogin}>Iniciar Sesión</button>
+      <button onClick={handleLogin}>Entrar</button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
