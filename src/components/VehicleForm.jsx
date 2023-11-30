@@ -74,8 +74,6 @@ const VehicleForm = () => {
           },
         ]);
         
-
-        // ... (resto de la lógica)
       } else {
         console.error(`No hay celdas disponibles para ${vehicleType}.`);
       }

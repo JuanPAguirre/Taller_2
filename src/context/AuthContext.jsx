@@ -10,7 +10,6 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const login = (username, password) => {
-    // Realizar la lógica de autenticación (puede ser un usuario fijo para este ejemplo)
     // Lógica de autenticación
     if (username === 'juan' && password === '1234') {
         setUser({username});
